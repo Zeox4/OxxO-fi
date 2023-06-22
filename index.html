@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa con marcadores</title>
+  <style>
+ 
+    /* Estilos para el mapa */
+    #map {
+	left: 30%;
+	
+      height: 600px;
+      width: 600px;
+    }
+    
+    /* Estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 50px;
+      top: 50px;
+      width: 80%;
+      height: 80%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.9);
+    }
+    
+    .modal-content {
+	  text-align: center;
+      display: block;
+      margin: 0 auto;
+      max-width: 40%;
+      max-height: 40%;
+    }
+	 h3{
+  color: white;
+  text-align: center;
+  }
+  p{
+  color: white;
+  text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <h1>Mapa con marcadores</h1>
+  <div id="map"></div>
+  
+  <!-- Modales -->
+  <div class="modal" id="modal1">
+    <span class="close" onclick="closeModal(1)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 1">
+  </div>
+  
+  <div class="modal" id="modal2">
+    <span class="close" onclick="closeModal(2)">&times;</span>
+	<h3>Da click en la imagen para escuchar</h3>
+     <a href="https://open.spotify.com/track/2Qkk5xpMVrOrXj1K1Wv40P?si=f2590fae8b064af1" target="_blank">
+     <img class="modal-content" src="oxxo2.png" width="1080" height="720" alt="Imagen de ejemplo">
+      </a>
+      <p>Una vez me asaltaron en un oxxo</p>
+  </div>
+  
+  <div class="modal" id="modal3">
+    <span class="close" onclick="closeModal(3)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 3">
+  </div>
+  
+  <div class="modal" id="modal4">
+    <span class="close" onclick="closeModal(4)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 4">
+  </div>
+  
+  <div class="modal" id="modal5">
+    <span class="close" onclick="closeModal(5)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 5">
+  </div>
+  
+  <div class="modal" id="modal6">
+    <span class="close" onclick="closeModal(6)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 6">
+  </div>
+  
+    <div class="modal" id="modal7">
+    <span class="close" onclick="closeModal(7)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 7">
+  </div>
+  
+  <div class="modal" id="modal8">
+    <span class="close" onclick="closeModal(8)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 8">
+  </div>
+  
+  <div class="modal" id="modal9">
+    <span class="close" onclick="closeModal(9)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 9">
+  </div>
+  
+  <div class="modal" id="modal10">
+    <span class="close" onclick="closeModal(10)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 10">
+  </div>
+  
+  <div class="modal" id="modal11">
+    <span class="close" onclick="closeModal(11)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 11">
+  </div>
+  
+  <div class="modal" id="modal12">
+    <span class="close" onclick="closeModal(12)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 12">
+  </div>
+  
+  <div class="modal" id="modal13">
+    <span class="close" onclick="closeModal(13)">&times;</span>
+    <img class="modal-content" src="oxxo1.png" alt="Imagen 13">
+  </div>
+ 
+  <!-- Incluir la API de Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKA-PoWGZGtoMMuUlTw7TsvmkioehmVAw&callback=initMap" async defer></script>
+  <script>
+    // Función para inicializar el mapa
+    function initMap() {
+      // Coordenadas iniciales del mapa
+      var myLatLng = {lat: 19.2820683,  lng: -99.5345607};
+      
+      // Crear mapa
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 13
+      });
+      
+      // Crear marcadores
+      var marker1 = new google.maps.Marker({
+        position: {lat: 19.2615339, lng: -99.5278999},
+        map: map,
+        title: 'Marcador 1'
+      });
+      
+      var marker2 = new google.maps.Marker({
+        position: {lat: 19.2613811, lng: -99.5319023},
+        map: map,
+        title: 'Marcador 2'
+      });
+	  
+	  var marker3 = new google.maps.Marker({
+        position: {lat: 19.2627434, lng: -99.5310665},
+        map: map,
+        title: 'Marcador 3'
+      });
+	  
+	  var marker4 = new google.maps.Marker({
+        position: {lat: 19.2674524, lng: -99.5309488},
+        map: map,
+        title: 'Marcador 4'
+      });
+      
+	  var marker5 = new google.maps.Marker({
+        position: {lat: 19.2714928, lng: -99.532067},
+        map: map,
+        title: 'Marcador 5'
+      });
+	  
+	  var marker6 = new google.maps.Marker({
+        position: {lat: 19.2828563, lng: -99.5323898},
+        map: map,
+        title: 'Marcador 6'
+      });
+	  
+	  var marker7 = new google.maps.Marker({
+        position: {lat: 19.2848401, lng: -99.5304529},
+        map: map,
+        title: 'Marcador 7'
+      });
+	  
+	  var marker8 = new google.maps.Marker({
+        position: {lat: 19.2916683, lng: -99.5277077},
+        map: map,
+        title: 'Marcador 8'
+      });
+	  
+	  var marker9 = new google.maps.Marker({
+        position: {lat: 19.3012745, lng: -99.536542},
+        map: map,
+        title: 'Marcador 9'
+      });
+	  
+	  var marker10 = new google.maps.Marker({
+        position: {lat: 19.3097199, lng: -99.5302221},
+        map: map,
+        title: 'Marcador 10'
+      });
+	  
+	  var marker11 = new google.maps.Marker({
+        position: {lat: 19.2867942, lng: -99.5194579},
+        map: map,
+        title: 'Marcador 11'
+      });
+	  
+	  var marker12 = new google.maps.Marker({
+        position: {lat: 19.2819198, lng: -99.5148544},
+        map: map,
+        title: 'Marcador 12'
+      });
+	  
+	  var marker13 = new google.maps.Marker({
+        position: {lat: 19.285016, lng: -99.5051831},
+        map: map,
+        title: 'Marcador 13'
+      });
+	 
+      // Abrir modal cuando se hace clic en el marcador 1
+      marker1.addListener('click', function() {
+        openModal(1);
+      });
+      
+      // Abrir modal cuando se hace clic en el marcador 2
+      marker2.addListener('click', function() {
+        openModal(2);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 3
+      marker3.addListener('click', function() {
+        openModal(3);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 4
+      marker4.addListener('click', function() {
+        openModal(4);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 5
+      marker5.addListener('click', function() {
+        openModal(5);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 6
+      marker6.addListener('click', function() {
+        openModal(6);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 7
+      marker7.addListener('click', function() {
+        openModal(7);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 8
+      marker8.addListener('click', function() {
+        openModal(8);
+      });
+	  
+	   // Abrir modal cuando se hace clic en el marcador 9
+      marker9.addListener('click', function() {
+        openModal(9);
+      });
+	  
+	   // Abrir modal cuando se hace clic en el marcador 10
+      marker10.addListener('click', function() {
+        openModal(10);
+      });
+	  
+	 // Abrir modal cuando se hace clic en el marcador 11
+      marker11.addListener('click', function() {
+        openModal(11);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 12
+      marker12.addListener('click', function() {
+        openModal(12);
+      });
+	  
+	  // Abrir modal cuando se hace clic en el marcador 13
+      marker13.addListener('click', function() {
+        openModal(13);
+      });
+    }
+    
+    // Función para abrir el modal
+    function openModal(modalId) {
+      var modal = document.getElementById('modal' + modalId);
+      modal.style.display = 'block';
+    }
+    
+    // Función para cerrar el modal
+    function closeModal(modalId) {
+      var modal = document.getElementById('modal' + modalId);
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
