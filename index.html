@@ -1,16 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mapa con marcadores</title>
+  <title>OxxO-Fi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+     margin: 0;
+     background-image: url('img/Fondo1.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+
+
+     /* Style the header */
+    .header {
+     background-color: 0;
+     padding: 20px;
+     text-align: center;
+    }
+
+     /* Style the top navigation bar */
+    .topnav {
+     overflow: hidden;
+     background-color: #333;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+     background-color: #ddd;
+     color: black;
+    }
+
+     /* Create three unequal columns that floats next to each other */
+    .column {
+     float: left;
+     padding: 10px;
+    }
+
+    /* Left and right column */
+    .column.side {
+     width: 25%;
+    }
+
+    /* Middle column */
+    .column.middle {
+     width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row::after {
+     content: "";
+     display: table;
+     clear: both;
+    }
+
+      /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+     width: 100%;
+    }
+  }  
  
     /* Estilos para el mapa */
     #map {
-	  left: 30%;
-	  height: 600px;
-      width: 600px;
+	  
+	  height: 500px;
+      width: 800px;
     }
-    
     /* Estilos para el modal */
     .modal {
       display: none;
@@ -33,21 +94,43 @@
       max-width: 40%;
       max-height: 40%;
     }
-	 h3{
-  color: white;
-  text-align: center;
-  }
-  p{
-  color: white;
-  text-align: center;
-  }
+	h3{
+     color: white;
+     text-align: center;
+    }
+	
+    p{
+     color: white;
+     text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>Mapa con marcadores</h1>
-  <div id="map"></div>
+  <div class="header">
+  <img src="img/oxxo.png" width="300" height="200">
+</div>
+
+<div class="row">
+  <div class="column side">
+    <img src="img/2.png" width="200" height="300">
+  </div>
   
-  <!-- Modales -->
+  <div class="column middle">
+    <center>
+    <h2>Oxxos y canciones cercanas</h2>
+    <div id="map"></div>
+  </center>
+  </div>
+  
+  <div class="column side">
+    <center>
+    <h2>Escaneame para <br>	agregar canciones </h2>
+    <a href="https://open.spotify.com/playlist/0EpMENZYeWtaZ7BiZyoc39?si=G_KMJZNcRwmeJK5q_r72Ag&pt=fc8a08276751d0f6b27ffadfd55a6015" target="_blank">
+      <img src="img/q.jpeg" width="150" height="150" alt="qr playlist compartida">
+    </center>
+  </div>
+</div>
+  
   <div class="modal" id="modal1">
     <span class="close" onclick="closeModal(1)">&times;</span>
 	<h3>Da click en la imagen para escuchar</h3>
@@ -86,47 +169,83 @@
   
   <div class="modal" id="modal5">
     <span class="close" onclick="closeModal(5)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 5">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/5TIotnUOLApEhSMLn5WMbo?si=930dfe7b00cd465a" target="_blank">
+        <img class="modal-content" src="img/oxxo5.png" width="300" height="200" alt="Imagen 5">
+      </a>
+      <p>Los oxxo es el unico lugar donde compro cigarros(fumo mucho).</p>
   </div>
   
   <div class="modal" id="modal6">
     <span class="close" onclick="closeModal(6)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 6">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/58aAmFZYaIn6Xucr4CN6i9?si=b8913c3f52a24466" target="_blank">
+        <img class="modal-content" src="img/oxxo6.png" width="300" height="200" alt="Imagen 6">
+      </a>
+      <p>Fui a mi primera cita con mi pareja a un oxxo a comer maruchan</p>
   </div>
   
-    <div class="modal" id="modal7">
+  <div class="modal" id="modal7">
     <span class="close" onclick="closeModal(7)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 7">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/3zmkTFvCLTIa6JfPr8F8QX?si=a37432bf5b6a4f93" target="_blank">
+        <img class="modal-content" src="img/oxxo7.png" width="300" height="200" alt="Imagen 7">
+      </a>
+      <p>Voy cuando me da hambre</p>
   </div>
   
   <div class="modal" id="modal8">
     <span class="close" onclick="closeModal(8)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 8">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/7c4F1675mulsbXL6f7q0wT?si=a42d222fdf2c49ae" target="_blank">
+        <img class="modal-content" src="img/oxxo8.png" width="300" height="200" alt="Imagen 8">
+      </a>
+      <p>Sali de trabajar a las 4-5 am y lo unico que habia abierto era un oxxo, y me regalaron un hot-dog</p>
   </div>
   
   <div class="modal" id="modal9">
     <span class="close" onclick="closeModal(9)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 9">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/2zmo93xTzKTP0lztR9iy9H?si=084f112077f548df" target="_blank">
+        <img class="modal-content" src="img/oxxo9.png" width="300" height="200" alt="Imagen 9">
+      </a>
+      <p>Se me cayó mi café despues de comprarlo y me regalaron otro</p>
   </div>
   
   <div class="modal" id="modal10">
     <span class="close" onclick="closeModal(10)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 10">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/3aA5fk4c6a7e5HM4rJqkSF?si=9f00b0792a784e62" target="_blank">
+        <img class="modal-content" src="img/oxxo10.png" width="300" height="200" alt="Imagen 10">
+      </a>
+      <p>Una vez me intente robar unos dulces de un oxxo y me cacharon (me regalaron los dulces)</p>
   </div>
   
   <div class="modal" id="modal11">
     <span class="close" onclick="closeModal(11)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 11">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/7DdXf9x75iEVCHWfoRwRuR?si=5fba7b6a3c394eb4" target="_blank">
+        <img class="modal-content" src="img/oxxo11.png" width="300" height="200" alt="Imagen 11">
+      </a>
+      <p>Mis idas al oxxo siempre han sido muy normales</p>
   </div>
   
   <div class="modal" id="modal12">
     <span class="close" onclick="closeModal(12)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 12">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/1EwHCYDaDlLfVqv1zVjvcG?si=96fff98cea3d43b1" target="_blank">
+        <img class="modal-content" src="img/oxxo12.png" width="300" height="200" alt="Imagen 12">
+      </a>
+      <p>Una vez recargué 100 pesos en el oxxo, y me equivoque de número</p>
   </div>
   
   <div class="modal" id="modal13">
     <span class="close" onclick="closeModal(13)">&times;</span>
-    <img class="modal-content" src="oxxo1.png" alt="Imagen 13">
+	<h3>Da click en la imagen para escuchar</h3>
+      <a href="https://open.spotify.com/track/34MqDD3411uJQvXsqpZv3D?si=e9a343e840aa43df " target="_blank">
+        <img class="modal-content" src="img/oxxo13.png" width="300" height="200" alt="Imagen 13">
+      </a>
+      <p>Me di cuenta que me gustaba alguien saliendo del oxxo, como una revelación</p>
   </div>
  
   <!-- Incluir la API de Google Maps -->
